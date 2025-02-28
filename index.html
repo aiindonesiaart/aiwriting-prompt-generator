@@ -1,0 +1,148 @@
+<!--
+                                                                  
+                                       .::::::::::-===+++++++++++++++=:.                            
+                           ..         .%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+..                        
+                        .-+#*.        .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%=.                       
+                      :=@@@@@=        .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=.                      
+                    .+@@@@@@@@*-      .@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+                      
+                   .+@@@@@@@@@@@#:    .%@@@@@@@@@@@@@@@@%%#######%@@@@@@@@@@@@:                     
+                  .-@@@@@=.#@@@@@@:    .::----------:.             .-*@@@@@@@@@.                    
+                  .#@@@=.  :*%@@@@#.                                  .+@@@@@@@-                    
+                  .@@@*       :%@@@=                                    +@@@@@@*                    
+                  -@@@-        .@@@#.                                   .#@@@@@@.                   
+                  =@@@.         #@@%.                                    .@@@@@@:                   
+                  -@@@-         *@@%.                                    .#@@@@@-                   
+                  .@@@%:      .=@@@#.                                     =@@@@@=                   
+                  .#@@@@*-::-+%@@@@=                                      :@@@@@=                   
+                   .@@@@@@@@@@@@@@*.                                      .@@@@@=                   
+                    :#@@@@@@@@@@@+.                                       .@@@@@=                   
+                      -%@@@@@@%+.                                         .@@@@@=                   
+                       .:----:.                                           .@@@@@=                   
+                                                                          .@@@@@=                   
+                                                                          .@@@@@=                   
+                       .##.                                               .@@@@@=                   
+                       -@@=                                               .@@@@@=                   
+                       -@@+                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                               .@@@@@=                   
+                       -@@*                                                +%%%%.                   
+                       -@@*                                                .....                    
+                       -@@*                                                                         
+                       -@@*                                               ....                      
+                       -@@*                                             .-*##=                      
+                       -@@*                                          .:+@@@@@@.                     
+                       -@@*                                         .+@@@@@@@@#=.                   
+                       :@@%                                        .*@@@@@@@@@@@@*.                 
+                       .@@@.                                       +@@@@@@++@@@@@@#.                
+                       .%@@=                                      .@@@@#-. :%@@@@@@#.               
+                        +@@#.                                     +@@@%.    .:=#@@@@-               
+                        .@@@*.                                   .%@@@-.       .+@@@*               
+                         =@@@+.                                  .@@@@.         :@@@@               
+                         .#@@@%.....            ..............   .@@@@.         .%@@@               
+                          .*@@@@@%#*++++++++++**##%%%%%%%%%%%=   .%@@@-         .@@@@.              
+                           .+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.   +@@@%:.     .:+@@@%.              
+                            ..+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*.   .@@@@@#=..:+%@@@@@+               
+                                .:=++++++++++++==--:.......::.     =@@@@@@@@@@@@@@@%.               
+                                                                    =@@@@@@@@@@@@@#.                
+                                                                    .:+@@@@@@@@@*-.                 
+                                                                       .=*###+-.                    
+                                                                         ....                       
+       
+--?
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Writing Prompt Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Writing Prompt Generator</h1>
+    <p>Craft your content with AI-powered precision.</p>
+
+    <!-- Category Selection -->
+    <label for="category">Select a Category:</label>
+    <select id="category">
+      <option value="">--Choose a Category--</option>
+      <option value="copywriting">Copywriting</option>
+      <option value="marketing">Marketing</option>
+      <option value="seo">Search Engine Optimization</option>
+      <option value="social-media">Social Media</option>
+      <option value="fiction">Fiction</option>
+      <option value="nonfiction">Nonfiction</option>
+      <option value="poetry">Poetry</option>
+      <option value="productivity">Productivity</option>
+      <option value="professionals">Professionals</option>
+    </select>
+
+    <!-- Subcategory Selection -->
+    <div id="subcategory-section" style="display: none;">
+      <label for="subcategory">Select a Subcategory:</label>
+      <select id="subcategory"></select>
+    </div>
+
+    <!-- Model Selection -->
+    <div id="model-section" style="display: none;">
+      <label for="model">Select a Model:</label>
+      <select id="model"></select>
+    </div>
+
+    <!-- Voice Tone and Writing Style -->
+    <label for="voice-tone">Select Voice Tone:</label>
+    <select id="voice-tone">
+      <option value="formal">Formal</option>
+      <option value="informal">Informal</option>
+      <option value="persuasive">Persuasive</option>
+      <option value="neutral">Neutral</option>
+      <option value="friendly">Friendly</option>
+      <option value="professional">Professional</option>
+    </select>
+
+    <label for="writing-style">Select Writing Style:</label>
+    <select id="writing-style">
+      <option value="descriptive">Descriptive</option>
+      <option value="narrative">Narrative</option>
+      <option value="expository">Expository</option>
+      <option value="persuasive">Persuasive</option>
+      <option value="conversational">Conversational</option>
+      <option value="technical">Technical</option>
+    </select>
+
+    <!-- Input Fields -->
+    <label for="topic">Topic:</label>
+    <textarea id="topic" placeholder="Enter your topic here"></textarea>
+
+    <label for="audience">Audience:</label>
+    <textarea id="audience" placeholder="Describe your target audience"></textarea>
+
+    <label for="num-outputs">Number of Outputs:</label>
+    <input type="number" id="num-outputs" min="1" value="1">
+
+    <!-- Generate Prompt Button -->
+    <button id="generate-prompt">Generate Prompt</button>
+
+    <!-- Output Section -->
+    <div id="output-section" style="display: none;">
+      <h2>Generated Prompt:</h2>
+      <textarea id="output" readonly></textarea>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
