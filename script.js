@@ -6,9 +6,9 @@ document.getElementById('category').addEventListener('change', function () {
   // Clear previous options
   subcategoryDropdown.innerHTML = '';
 
-  if (category === 'copywriting') {
+  if (category === 'marketing') {
     subcategorySection.style.display = 'block';
-    const subcategories = ['Blog Writing', 'Book Writing', 'Content Writing', 'Course Writing', 'Email Writing', 'Landing Pages'];
+    const subcategories = ['Framework', 'Miscellaneous'];
     subcategories.forEach(sub => {
       const option = document.createElement('option');
       option.value = sub.toLowerCase().replace(/\s+/g, '-');
@@ -28,25 +28,36 @@ document.getElementById('subcategory').addEventListener('change', function () {
   // Clear previous options
   modelDropdown.innerHTML = '';
 
-  if (subcategory === 'blog-writing') {
+  if (subcategory === 'framework') {
     modelSection.style.display = 'block';
-    const models = [
-      'Generate blog post titles',
-      'Generate blog post descriptions',
-      'Generate blog post outline',
-      'Generate complete blog post from outline',
-      'Generate complete blog post from topic',
-      'Generate introduction using framework',
-      'Generate paragraph of text'
-    ];
+    const models = ['AIDA Framework', 'PAS Framework', 'BAB Framework', 'FAB Framework'];
     models.forEach(model => {
       const option = document.createElement('option');
       option.value = model.toLowerCase().replace(/\s+/g, '-');
       option.textContent = model;
       modelDropdown.appendChild(option);
     });
+
+    // Show "Describe Your Business" input
+    document.getElementById('describe-business').style.display = 'block';
+    document.getElementById('what-do-you-sell').style.display = 'none';
+  } else if (subcategory === 'miscellaneous') {
+    modelSection.style.display = 'block';
+    const models = ['Create buyer personas', 'Create long form sales letter', 'Create video sales letter VSL'];
+    models.forEach(model => {
+      const option = document.createElement('option');
+      option.value = model.toLowerCase().replace(/\s+/g, '-');
+      option.textContent = model;
+      modelDropdown.appendChild(option);
+    });
+
+    // Show "What Do You Sell" input
+    document.getElementById('describe-business').style.display = 'none';
+    document.getElementById('what-do-you-sell').style.display = 'block';
   } else {
     modelSection.style.display = 'none';
+    document.getElementById('describe-business').style.display = 'none';
+    document.getElementById('what-do-you-sell').style.display = 'none';
   }
 });
 
@@ -56,12 +67,20 @@ document.getElementById('generate-prompt').addEventListener('click', function ()
   const model = document.getElementById('model').value;
   const voiceTone = document.getElementById('voice-tone').value;
   const writingStyle = document.getElementById('writing-style').value;
-  const topic = document.getElementById('topic').value;
-  const audience = document.getElementById('audience').value;
-  const numOutputs = document.getElementById('num-outputs').value;
 
-  // Construct the prompt
-  const prompt = `Write ${numOutputs} ${model.split('-').join(' ')} about ${topic} for ${audience}. Use a ${voiceTone} tone and a ${writingStyle} style.`;
+  let topic, audience, prompt;
+
+  if (subcategory === 'framework') {
+    const businessDescription = document.getElementById('business-description').value;
+    topic = `Using the ${model.split('-').join(' ')} for marketing`;
+    audience = businessDescription;
+    prompt = `Write a marketing strategy using the ${model.split('-').join(' ')} for ${audience}. Use a ${voiceTone} tone and a ${writingStyle} style.`;
+  } else if (subcategory === 'miscellaneous') {
+    const productDescription = document.getElementById('product-description').value;
+    topic = `Creating ${model.split('-').join(' ')} for marketing`;
+    audience = productDescription;
+    prompt = `Create a ${model.split('-').join(' ')} for ${audience}. Use a ${voiceTone} tone and a ${writingStyle} style.`;
+  }
 
   // Display the prompt
   document.getElementById('output').value = prompt;
